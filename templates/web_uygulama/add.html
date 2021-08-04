@@ -1,5 +1,18 @@
-<form action="/your-name/" method="post">
+<input class="btn btn-success" type="button" value="Kontrol" onclick="location.href='{% url 'vaka:control' %}'"  />
+
+<form action="{% url 'vaka:add' %}" method="post" enctype='multipart/form-data'>
     {% csrf_token %}
-    {{ form }}
+
+
+              {{ form.media }} 
+                {% for field in form %}
+                  <div class="form-group ">
+                     <label>{{field.label}}</label> <br>
+                    {{field}}
+                  </div>
+                  
+                {% endfor %}
+
     <input type="submit" value="Gönder">
+
 </form>

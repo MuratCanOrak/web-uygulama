@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<input class="btn btn-success" type="button" value="Ekleme" onclick="location.href='{% url 'vaka:add' %}'"  />
+
+<form action="{% url 'vaka:control' %}" method="POST">
+{% csrf_token %}
+  <label for="code">Lütfen Kodunuzu Giriniz</label><br>
+  <input type="text" id="code" name="code" ><br>
+
+  <input type="submit" value="Sorgula">
+</form> 
+
+<p> 
+{% if cnt %}
+Bilgiler :  <br>
+
+Başlık: {{obj.title}} <br>
+Açıklama : {{obj.description}} <br>
+Link : {{obj.link}} <br>
+Email : {{obj.email}} <br>
+Fotoğraf : <img src="{{obj.image.url}}" alt="Italian Trulli">
+
+
+{% endif %}
+</p>
+
+</body>
+</html>
