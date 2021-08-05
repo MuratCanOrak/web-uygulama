@@ -5,8 +5,7 @@ from django.conf.urls import url
 app_name = 'web_uygulama'
 
 urlpatterns = [
-    path('add/', views.add, name="add"),
-    # path('control/<str:code>/', views.control, name="control"),
+    path('', views.add, name="add"),
     path('control/', views.control, name="control"),
     
 ]

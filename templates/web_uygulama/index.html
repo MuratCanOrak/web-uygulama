@@ -1,0 +1,60 @@
+{% load static i18n %}
+{% load i18n %}
+{% load static %}
+{% include 'web_uygulama/base/header.html' %}
+<button type="button" id="actionButton" class="btn btn-primary" data-toggle="modal" style="display:none;" data-target="#myModal">
+actionButton
+</button>
+<div class="modal" id="myModal" tabindex="-1" role="dialog">
+   <div class="modal-dialog" role="document">
+      <div class="modal-content">
+         <div class="modal-header">
+            <h5 class="modal-title">{% trans "response" %}</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+         </div>
+         <div class="modal-body" id="modalBody">
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">{% trans "close" %}</button>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="form-body">
+   <div class="row">
+      <div class="col-3">
+      </div>
+      <div class="form-holder col-6 ">
+         <div class="form-content">
+            <div class="form-items form-class">
+               <h3 style="text-align: center;">{% trans "register" %}</h3>
+               <form action="{% url 'vaka:add' %}" method="post" enctype='multipart/form-data'>
+                  {% csrf_token %}
+                  {{ form.media }} 
+                  {% for field in form %}
+                  <div class="form-group ">
+                     <label>{{field.label}}</label> <br>
+                     {{field}}
+                  </div>
+                  {% endfor %}
+                  <input type="submit" value="{% trans "send" %}">
+               </form>
+            </div>
+         </div>
+      </div>
+      {% if form_obj %}
+      <div class="form-holder col-3 ">
+         <div class="form-content">
+            <div class="form-items form-class">
+               <p class="form-class">
+                  {% trans "controlCode" %} <br> {{form_obj.code}}
+               </p>
+            </div>
+         </div>
+      </div>
+      {% endif %}
+   </div>
+</div>
+{% include 'web_uygulama/base/footer.html' %}

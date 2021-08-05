@@ -1,0 +1,60 @@
+{% load static %}
+<script src="{% static 'js/app.js' %}"></script>
+
+   </body>
+<script>
+    function check_code() {
+        var code = document.getElementById("codefield").value;
+        let data = new FormData();
+        data.append("code", code);
+
+        $.ajax({
+            url: `${window.location.origin}/control/`,
+            type: "POST",
+            data: data,
+            headers: {
+                    'X-CSRFToken': getCookie('csrftoken'),
+                    'credentials': 'same-origin'
+                },
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                   let modalBody = document.getElementById("modalBody")
+                   console.log(response);
+                   let body = "";
+                   if (response.cnt){
+                        body += response.labels.title + " : "  + response.obj.title + "<br /> <br />"
+                        body += response.labels.description + " : "  + response.obj.description + "<br /> <br />"
+                        body += response.labels.link + " : "  +response.obj.link + "<br /> <br />"
+                        body += response.labels.email + " : "  + response.obj.email + "<br /> <br />"
+                        body += response.labels.image + " : "  + " <img src='" +response.obj.image+ "' style='max-width:200px' > "
+                   }
+                   else {
+                       body += response.error_msg
+                   }
+                   modalBody.innerHTML = body;
+                   let button = document.getElementById("actionButton")
+                   button.click();
+                },
+        })
+    }
+
+    function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    // Does this cookie string begin with the name we want?
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+</script>
+
+
+</html>

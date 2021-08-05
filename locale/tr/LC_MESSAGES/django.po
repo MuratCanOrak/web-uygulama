@@ -1,0 +1,81 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: 0.1\n"
+"Report-Msgid-Bugs-To: webmaster@localhost\n"
+"POT-Creation-Date: 2021-08-05 08:31:50\n"
+"PO-Revision-Date: 2021-08-05 08:31:50\n"
+"Last-Translator: Server <root@localhost>\n"
+"Language-Team: English <webmaster@localhost>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: web_uygulama/settings.py:44
+msgid "English"
+msgstr "İngilizce"
+
+#: templates/web_uygulama/add.html:32
+msgid "Jobs"
+msgstr "Meslek"
+
+#: web_uygulama/settings.py:43
+msgid "Türkçe"
+msgstr "Türkçe"
+
+
+#: templates/web_uygulama/add.html
+msgid "title"
+msgstr "Başlık"
+
+#: templates/web_uygulama/add.html
+msgid "description"
+msgstr "Açıklama"
+
+#: templates/web_uygulama/add.html
+msgid "email"
+msgstr "Email"
+
+#: templates/web_uygulama/add.html
+msgid "link"
+msgstr "link"
+
+#: templates/web_uygulama/add.html
+msgid "Please enter email address"
+msgstr "Lütfen email adresinizi girin."
+
+#: templates/web_uygulama/add.html
+msgid "image"
+msgstr "Resim"
+
+#: templates/web_uygulama/add.html
+msgid "send"
+msgstr "Gönder"
+
+#: templates/web_uygulama/add.html
+msgid "control"
+msgstr "Kontrol"
+
+msgid "Web App"
+msgstr "Web Uygulaması"
+
+msgid "response"
+msgstr "Sonuç"
+
+msgid "close"
+msgstr "Kapat"
+
+msgid "code"
+msgstr "Kodu Giriniz."
+
+msgid "search"
+msgstr "Ara"
+
+msgid "register"
+msgstr "Kaydol"
+
+msgid "controlCode"
+msgstr "Kontrol için Kodunuz: "
+
+msgid "error_msg"
+msgstr "Verilen kod sistemde kayıtlı değildir."

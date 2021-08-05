@@ -4,7 +4,7 @@ from .utility import random_code_generator
 class Blog (models.Model):
     title = models.CharField(max_length=150)
     description =  models.TextField()
-    link = models.CharField(max_length=250)
+    link = models.URLField(max_length=250)
     email = models.EmailField( max_length=200)
     image = models.ImageField(upload_to="uploaded_images")
     code = models.CharField(null=True, unique=True, max_length=100)
