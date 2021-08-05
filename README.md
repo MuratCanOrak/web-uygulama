@@ -63,4 +63,4 @@ python3 manage.py createsuperuser
 
 Kullanıcı oluşturduktan sonra panele aşağıdaki linkten erişebilirsiniz.
 
-[proje linki](http://localhost:8000/admin)
+[proje Django admin panel linki](http://localhost:8000/admin)
