@@ -54,3 +54,13 @@ python3 manage.py runserver
 Projeye ayağa aşağıdaki linkten erişebilirsiniz.
 
 [proje linki](http://localhost:8000)
+
+
+Django admin paneline girmek için aşağıdaki kod ile kullanıcı oluşturabilirsiniz.
+`
+python3 manage.py createsuperuser
+`
+
+Kullanıcı oluşturduktan sonra panele aşağıdaki linkten erişebilirsiniz.
+
+[proje linki](http://localhost:8000/admin)
