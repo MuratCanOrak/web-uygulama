@@ -28,6 +28,7 @@ def control(request):
         code = request.POST.get("code")
         cnt = False
         context = {}
+        error_msg =""
         try:
             obj = Blog.objects.get(code = code)
             serialized_obj = {
